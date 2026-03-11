@@ -102,3 +102,26 @@ h1,h2,h3,h4,h5,h6 { line-height: var(--leading-tight); margin: 0; }
 p { margin: 0; }
 a { color: var(--color-primary); }
 
+	
+/* Mobile first — base styles (320px+) */
+/* Write all base styles here — outside any media query */
+
+/* Small tablets (480px+) — optional */
+@media (min-width: 480px) { }
+
+/* Tablets (768px+) — first major layout shift */
+@media (min-width: 768px) { }
+
+/* Small desktops (1024px+) */
+@media (min-width: 1024px) { }
+
+/* Large desktops (1280px+) */
+@media (min-width: 1280px) { }
+
+/* Always add reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
