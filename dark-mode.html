@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Mode</title>
+<link rel="stylesheet" href="dark-mode.css">
+<link rel="stylesheet" href="design-system.css">
+</head>
+
+<body>
+
+<header class="header">
+    <span class="logo">DevBrand</span>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+        <span class="theme-toggle_icon">☀️</span>
+    </button>
+</header>
+
+<main class="main">
+
+<section class="hero">
+    <h1>Responsive Design with CSS Variables</h1>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Dicta totam tempore sit quisquam omnis voluptatibus vero laboriosam!
+    </p>
+
+    <div class="button-group">
+        <button class="btn btn--primary">Get Started</button>
+        <button class="btn btn--outline">Learn More</button>
+    </div>
+</section>
+
+
+<section class="cards">
+
+<article class="card">
+    <h2 class="card_title">Design System</h2>
+    <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+</article>
+
+<article class="card">
+    <h2 class="card_title">Responsive UI</h2>
+    <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+</article>
+
+<article class="card">
+    <h2 class="card_title">Modern CSS</h2>
+    <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+</article>
+
+</section>
+
+</main>
+
+
+<script>
+
+const toggle = document.getElementById("themeToggle");
+const html = document.documentElement;
+
+/* Load saved theme */
+
+const savedTheme = localStorage.getItem("theme");
+
+if(savedTheme){
+    html.dataset.theme = savedTheme;
+}
+
+/* Toggle theme */
+
+toggle.addEventListener("click", () => {
+
+    const isDark = html.dataset.theme === "dark";
+
+    html.dataset.theme = isDark ? "light" : "dark";
+
+    localStorage.setItem("theme", html.dataset.theme);
+
+});
+
+</script>
+
+</body>
+</html>
